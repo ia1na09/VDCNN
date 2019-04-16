@@ -55,7 +55,7 @@ def downsample(inputs, pool_type='max', sorted=True, stage=1):
 def VDCNN(num_classes, depth=9, sequence_length=1024, embedding_dim=16, 
           shortcut=False, pool_type='max', sorted=True, use_bias=False, input_tensor=None):
     if depth == 9:
-        num_conv_blocks = (1, 1, 1, 1)
+        num_conv_blocks = (2, 1, 1, 1)
     elif depth == 17:
         num_conv_blocks = (2, 2, 2, 2)
     elif depth == 29:
