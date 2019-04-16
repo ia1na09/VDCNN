@@ -67,7 +67,10 @@ def train(x_train, y_train, x_test, y_test):
                   use_bias=FLAGS.use_bias)
 
     # https://machinelearningmastery.com/custom-metrics-deep-learning-keras-python/
-    model.compile(optimizer=SGD(lr=0.01, momentum=0.9), loss='mse', metrics=['mse', 'mae', 'mape', 'cosine', 'accuracy'])
+    # model.compile(optimizer=SGD(lr=0.01, momentum=0.9), loss='mse',
+    #              metrics=['mse', 'mae', 'mape', 'cosine', 'accuracy'])
+    model.compile(optimizer=SGD(lr=0.01, momentum=0.9), loss='categorical_crossentropy',  metrics=['mse', 'accuracy'])
+    #model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
     model_json = model.to_json()
 
